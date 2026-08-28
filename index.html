@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Canteen Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🍴 Smart Canteen Order</h1>
+    <p>Order your favourite food quickly and easily</p>
+</header>
+
+<nav>
+    <a href="#menu">Menu</a>
+    <a href="#cart">Cart 🛒</a>
+    <a href="#checkout">Checkout</a>
+</nav>
+
+<section id="menu" class="container">
+    <h2>Today's Menu</h2>
+
+    <div class="menu-grid">
+
+        <div class="food-card">
+            <h3>🍔 Burger</h3>
+            <p>Fresh vegetable burger</p>
+            <h4>₹80</h4>
+            <button onclick="addToCart('Burger', 80)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <h3>🍕 Pizza</h3>
+            <p>Cheesy vegetable pizza</p>
+            <h4>₹120</h4>
+            <button onclick="addToCart('Pizza', 120)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <h3>🍜 Noodles</h3>
+            <p>Hot and spicy noodles</p>
+            <h4>₹70</h4>
+            <button onclick="addToCart('Noodles', 70)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <h3>🥪 Sandwich</h3>
+            <p>Fresh vegetable sandwich</p>
+            <h4>₹60</h4>
+            <button onclick="addToCart('Sandwich', 60)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <h3>🍚 Fried Rice</h3>
+            <p>Vegetable fried rice</p>
+            <h4>₹90</h4>
+            <button onclick="addToCart('Fried Rice', 90)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card">
+            <h3>🥤 Fresh Juice</h3>
+            <p>Fresh fruit juice</p>
+            <h4>₹50</h4>
+            <button onclick="addToCart('Fresh Juice', 50)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart" class="container">
+    <h2>🛒 Your Cart</h2>
+
+    <div id="cartItems">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+</section>
+
+<section id="checkout" class="container checkout">
+    <h2>Checkout</h2>
+
+    <form id="orderForm">
+
+        <label for="name">Customer Name</label>
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label for="phone">Phone Number</label>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter phone number"
+            required
+        >
+
+        <label for="payment">Payment Mode</label>
+
+        <select id="payment" required>
+            <option value="">-- Select Payment Mode --</option>
+            <option value="Cash">Cash</option>
+            <option value="UPI">UPI</option>
+            <option value="Debit/Credit Card">
+                Debit / Credit Card
+            </option>
+            <option value="Online Payment">
+                Online Payment
+            </option>
+        </select>
+
+        <div id="paymentDetails"></div>
+
+        <button type="submit" class="order-btn">
+            Place Order
+        </button>
+
+    </form>
+
+    <div id="confirmation"></div>
+
+</section>
+
+<footer>
+    <p>© 2026 Smart Canteen Order</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
