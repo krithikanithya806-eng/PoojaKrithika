@@ -429,7 +429,9 @@ function filterCategory(category) {
 
             button.classList.remove("active");
 
-            if (button.textContent.trim() === category) {
+            if (
+                button.dataset.category === category
+            ) {
                 button.classList.add("active");
             }
 
@@ -438,6 +440,25 @@ function filterCategory(category) {
     displayMenu();
 }
 
+
+// Category button clicks
+
+document
+    .querySelectorAll(".category-btn")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                filterCategory(
+                    this.dataset.category
+                );
+
+            }
+        );
+
+    });
 
 // =====================================================
 // QUANTITY
