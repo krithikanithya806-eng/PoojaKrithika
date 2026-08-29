@@ -1,161 +1,178 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smart Canteen Order</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <h1>🍴 Smart Canteen Order</h1>
-    <p>Order your favourite food quickly and easily</p>
+
+    <p>
+        Order your favourite food quickly and easily
+    </p>
+
 </header>
 
+
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
+
     <a href="#menu">Menu</a>
-    <a href="#cart">Cart 🛒</a>
-    <a href="#checkout">Checkout</a>
+
+    <a href="#cart">
+        Cart 🛒
+        <span id="cartCount">0</span>
+    </a>
+
+    <a href="#checkout">
+        Checkout
+    </a>
+
+    <a href="#orders">
+        My Orders
+    </a>
+
 </nav>
+
+
+<!-- ================= MENU ================= -->
 
 <section id="menu" class="container">
 
     <h2>🍽️ Today's Menu</h2>
 
-    <div class="menu-grid">
 
-        <!-- Burger -->
-        <div class="food-card">
-            <h3>🍔 Burger</h3>
-            <p>Fresh vegetable burger</p>
-            <h4>₹80</h4>
-            <button onclick="addToCart('Burger', 80)">
-                Add to Cart
-            </button>
-        </div>
+    <!-- SEARCH -->
 
-        <!-- Pizza -->
-        <div class="food-card">
-            <h3>🍕 Pizza</h3>
-            <p>Cheesy vegetable pizza</p>
-            <h4>₹120</h4>
-            <button onclick="addToCart('Pizza', 120)">
-                Add to Cart
-            </button>
-        </div>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Search menu..."
+    >
 
-        <!-- Noodles -->
-        <div class="food-card">
-            <h3>🍜 Noodles</h3>
-            <p>Hot and spicy noodles</p>
-            <h4>₹70</h4>
-            <button onclick="addToCart('Noodles', 70)">
-                Add to Cart
-            </button>
-        </div>
 
-        <!-- Sandwich -->
-        <div class="food-card">
-            <h3>🥪 Sandwich</h3>
-            <p>Fresh vegetable sandwich</p>
-            <h4>₹60</h4>
-            <button onclick="addToCart('Sandwich', 60)">
-                Add to Cart
-            </button>
-        </div>
+    <!-- CATEGORIES -->
 
-        <!-- Fried Rice -->
-        <div class="food-card">
-            <h3>🍚 Fried Rice</h3>
-            <p>Vegetable fried rice</p>
-            <h4>₹90</h4>
-            <button onclick="addToCart('Fried Rice', 90)">
-                Add to Cart
-            </button>
-        </div>
+    <div class="categories">
 
-        <!-- Fresh Juice -->
-        <div class="food-card">
-            <h3>🥤 Fresh Juice</h3>
-            <p>Fresh fruit juice</p>
-            <h4>₹50</h4>
-            <button onclick="addToCart('Fresh Juice', 50)">
-                Add to Cart
-            </button>
-        </div>
+        <button
+            class="category-btn active"
+            onclick="filterCategory('All')"
+        >
+            All
+        </button>
 
-        <!-- Veg Meals -->
-        <div class="food-card">
-            <h3>🍛 Veg Meals</h3>
-            <p>Complete vegetarian meals</p>
-            <h4>₹100</h4>
-            <button onclick="addToCart('Veg Meals', 100)">
-                Add to Cart
-            </button>
-        </div>
+        <button
+            class="category-btn"
+            onclick="filterCategory('Breakfast')"
+        >
+            Breakfast
+        </button>
 
-        <!-- Veg Biriyani -->
-        <div class="food-card">
-            <h3>🍚 Veg Biriyani</h3>
-            <p>Flavourful vegetable biriyani</p>
-            <h4>₹110</h4>
-            <button onclick="addToCart('Veg Biriyani', 110)">
-                Add to Cart
-            </button>
-        </div>
+        <button
+            class="category-btn"
+            onclick="filterCategory('Meals')"
+        >
+            Meals
+        </button>
 
-        <!-- Normal Water -->
-        <div class="food-card">
-            <h3>💧 Normal Water</h3>
-            <p>Room temperature drinking water</p>
-            <h4>₹10</h4>
-            <button onclick="addToCart('Normal Water', 10)">
-                Add to Cart
-            </button>
-        </div>
+        <button
+            class="category-btn"
+            onclick="filterCategory('Snacks')"
+        >
+            Snacks
+        </button>
 
-        <!-- Cold Water -->
-        <div class="food-card">
-            <h3>🧊 Cold Water</h3>
-            <p>Chilled drinking water</p>
-            <h4>₹15</h4>
-            <button onclick="addToCart('Cold Water', 15)">
-                Add to Cart
-            </button>
-        </div>
+        <button
+            class="category-btn"
+            onclick="filterCategory('Fast Food')"
+        >
+            Fast Food
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterCategory('Drinks')"
+        >
+            Drinks
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterCategory('Non-Veg')"
+        >
+            Non-Veg
+        </button>
 
     </div>
+
+
+    <!-- FOOD MENU -->
+
+    <div
+        id="menuGrid"
+        class="menu-grid"
+    ></div>
+
 
 </section>
 
 
-<!-- CART -->
+<!-- ================= CART ================= -->
 
-<section id="cart" class="container">
+<section
+    id="cart"
+    class="container"
+>
 
     <h2>🛒 Your Cart</h2>
 
     <div id="cartItems">
-        <p>Your cart is empty.</p>
+
+        <p>
+            Your cart is empty.
+        </p>
+
     </div>
 
-    <h3>
-        Total: ₹<span id="total">0</span>
-    </h3>
+
+    <div class="cart-total">
+
+        Total:
+        ₹<span id="total">0</span>
+
+    </div>
 
 </section>
 
 
-<!-- CHECKOUT -->
+<!-- ================= CHECKOUT ================= -->
 
-<section id="checkout" class="container checkout">
+<section
+    id="checkout"
+    class="container checkout"
+>
 
     <h2>💳 Checkout</h2>
 
+
     <form id="orderForm">
+
+
+        <!-- CUSTOMER NAME -->
 
         <label for="name">
             Customer Name
@@ -169,6 +186,8 @@
         >
 
 
+        <!-- PHONE -->
+
         <label for="phone">
             Phone Number
         </label>
@@ -177,15 +196,22 @@
             type="tel"
             id="phone"
             placeholder="Enter phone number"
+            pattern="[0-9]{10}"
+            maxlength="10"
             required
         >
 
+
+        <!-- PAYMENT -->
 
         <label for="payment">
             Payment Mode
         </label>
 
-        <select id="payment" required>
+        <select
+            id="payment"
+            required
+        >
 
             <option value="">
                 -- Select Payment Mode --
@@ -210,24 +236,80 @@
         </select>
 
 
+        <!-- PAYMENT DETAILS -->
+
         <div id="paymentDetails"></div>
 
 
         <button
             type="submit"
-            class="order-btn">
-
+            class="order-btn"
+        >
             Place Order
-
         </button>
+
 
     </form>
 
 
+    <!-- ORDER CONFIRMATION -->
+
     <div id="confirmation"></div>
+
 
 </section>
 
+
+<!-- ================= ORDER HISTORY ================= -->
+
+<section
+    id="orders"
+    class="container"
+>
+
+    <h2>📜 My Order History</h2>
+
+    <div id="orderHistory">
+
+        <p>
+            No previous orders.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRACK ORDER ================= -->
+
+<section
+    class="container tracking"
+>
+
+    <h2>🚚 Track Your Order</h2>
+
+
+    <input
+        type="text"
+        id="trackOrderId"
+        placeholder="Enter Order ID"
+    >
+
+
+    <button
+        onclick="trackOrder()"
+    >
+        Track Order
+    </button>
+
+
+    <div id="trackingResult"></div>
+
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -239,17 +321,8 @@
 
 
 <script src="script.js"></script>
-<script src="features.js"></script>
 
 </body>
+
 </html>
 ```
-
-        
-           
-            
-    
-
-    
-
-        
