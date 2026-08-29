@@ -188,6 +188,18 @@ document.getElementById("orderForm")
 
         const orderId =
             "SCO" + Math.floor(100000 + Math.random() * 900000);
+        const order = {
+           id: orderId,
+           customer: name,
+           phone: phone,
+           items: [...cart],
+           total: total,
+           payment: payment,
+           status: "Order Placed",
+           date: new Date().toLocaleString()
+};
+
+saveOrderHistory(order);
 
         document.getElementById("confirmation")
             .innerHTML = `
