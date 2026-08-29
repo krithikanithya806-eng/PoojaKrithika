@@ -237,3 +237,5 @@ document.getElementById("orderForm")
         document.getElementById("paymentDetails")
             .innerHTML = "";
     });
+        // Make addToCart available to features.js
+        window.addToCart = addToCart;
