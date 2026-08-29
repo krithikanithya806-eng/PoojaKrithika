@@ -1,31 +1,14 @@
-```css
-/* ==========================================
-   GENERAL
-========================================== */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-html {
-    scroll-behavior: smooth;
-}
-
-
 body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
     color: #333;
-    line-height: 1.5;
 }
-
-
-/* ==========================================
-   HEADER
-========================================== */
 
 header {
     background: #2e7d32;
@@ -34,263 +17,75 @@ header {
     padding: 30px 20px;
 }
 
-
 header h1 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-
-
-/* ==========================================
-   NAVIGATION
-========================================== */
 
 nav {
     background: #1b5e20;
-    padding: 15px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 15px;
 }
-
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 20px;
     font-weight: bold;
 }
-
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-
-#cartCount {
-    background: white;
-    color: #1b5e20;
-    padding: 2px 7px;
-    border-radius: 50%;
-    margin-left: 3px;
-}
-
-
-/* ==========================================
-   CONTAINER
-========================================== */
 
 .container {
     width: 90%;
     max-width: 1100px;
-    margin: 35px auto;
+    margin: 30px auto;
 }
-
 
 .container h2 {
     margin-bottom: 20px;
 }
 
-
-/* ==========================================
-   SEARCH
-========================================== */
-
-#searchInput {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-
-#searchInput:focus {
-    outline: 2px solid #2e7d32;
-}
-
-
-/* ==========================================
-   CATEGORIES
-========================================== */
-
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
-}
-
-
-.category-btn {
-    background: #2e7d32;
-    color: white;
-    border: none;
-    padding: 9px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.category-btn:hover {
-    background: #1b5e20;
-}
-
-
-.category-btn.active {
-    background: #0d4711;
-}
-
-
-/* ==========================================
-   FOOD MENU
-========================================== */
-
 .menu-grid {
     display: grid;
     grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
+        repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
-
-
-/* ==========================================
-   FOOD CARD
-========================================== */
 
 .food-card {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.1);
-
-    transition:
-        transform 0.2s;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-.food-card:hover {
-    transform: translateY(-3px);
-}
-
 
 .food-card h3 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-
 
 .food-card p {
     color: #666;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-
 
 .food-card h4 {
     color: #2e7d32;
     font-size: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
-
-
-/* ==========================================
-   VEG / NON-VEG SYMBOL
-========================================== */
-
-.food-symbol {
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    margin-right: 7px;
-    vertical-align: middle;
-}
-
-
-.veg-symbol {
-    background: green;
-    border: 2px solid darkgreen;
-}
-
-
-.nonveg-symbol {
-    background: red;
-    border: 2px solid darkred;
-}
-
-
-/* ==========================================
-   AVAILABILITY
-========================================== */
-
-.available {
-    color: green !important;
-    font-weight: bold;
-}
-
-
-.unavailable {
-    color: red !important;
-    font-weight: bold;
-}
-
-
-/* ==========================================
-   QUANTITY
-========================================== */
-
-.quantity-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 15px 0;
-}
-
-
-.quantity-control button {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    font-size: 20px;
-}
-
-
-.quantity-value {
-    font-weight: bold;
-    min-width: 25px;
-    text-align: center;
-}
-
-
-/* ==========================================
-   BUTTONS
-========================================== */
 
 button {
     background: #2e7d32;
     color: white;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 18px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-
 button:hover {
     background: #1b5e20;
 }
-
-
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-}
-
-
-/* ==========================================
-   CART
-========================================== */
 
 #cartItems {
     background: white;
@@ -298,44 +93,18 @@ button:disabled {
     border-radius: 10px;
 }
 
-
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    padding: 15px 0;
+    padding: 12px 0;
 }
-
-
-.cart-item:last-child {
-    border-bottom: none;
-}
-
 
 .remove-btn {
     background: #d32f2f;
+    padding: 6px 10px;
 }
-
-
-.remove-btn:hover {
-    background: #b71c1c;
-}
-
-
-.cart-total {
-    background: white;
-    margin-top: 15px;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-/* ==========================================
-   CHECKOUT
-========================================== */
 
 .checkout {
     background: white;
@@ -343,132 +112,51 @@ button:disabled {
     border-radius: 10px;
 }
 
-
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-
-label {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-
 input,
 select {
-    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 .order-btn {
     margin-top: 20px;
     font-size: 16px;
 }
 
-
-/* ==========================================
-   PAYMENT
-========================================== */
+#paymentDetails {
+    margin-top: 10px;
+}
 
 .payment-box {
     background: #f1f8e9;
     padding: 15px;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
-
-.payment-box input {
-    margin-top: 5px;
-    margin-bottom: 10px;
+#confirmation {
+    margin-top: 20px;
 }
-
-
-/* ==========================================
-   CONFIRMATION
-========================================== */
 
 .success {
     background: #e8f5e9;
     border: 1px solid #4caf50;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 20px;
     color: #1b5e20;
 }
-
-
-.success p {
-    margin: 5px 0;
-}
-
-
-/* ==========================================
-   ORDER HISTORY
-========================================== */
-
-#orderHistory {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-
-.order-history-card {
-    border-bottom: 1px solid #ddd;
-    padding: 20px 0;
-}
-
-
-.order-history-card:last-child {
-    border-bottom: none;
-}
-
-
-.order-status {
-    font-weight: bold;
-    color: #2e7d32;
-}
-
-
-/* ==========================================
-   TRACKING
-========================================== */
-
-.tracking {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-
-#trackingResult {
-    margin-top: 20px;
-}
-
-
-.tracking-step {
-    padding: 8px;
-    margin: 5px 0;
-}
-
-
-.tracking-step.completed {
-    color: #2e7d32;
-    font-weight: bold;
-}
-
-
-/* ==========================================
-   FOOTER
-========================================== */
 
 footer {
     background: #222;
@@ -478,35 +166,15 @@ footer {
     margin-top: 40px;
 }
 
-
-/* ==========================================
-   MOBILE
-========================================== */
-
 @media (max-width: 600px) {
 
     nav a {
-        display: inline-block;
-        margin: 5px 8px;
+        display: block;
+        margin: 10px;
     }
-
 
     .cart-item {
         flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
     }
-
-
-    .categories {
-        gap: 5px;
-    }
-
-
-    .category-btn {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
-
 }
-```
