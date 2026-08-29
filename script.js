@@ -421,30 +421,21 @@ document
 
 function filterCategory(category) {
 
-    currentCategory =
-        category;
-
+    currentCategory = category;
 
     document
-        .querySelectorAll(
-            ".category-btn"
-        )
+        .querySelectorAll(".category-btn")
         .forEach(button => {
 
-            button.classList.remove(
-                "active"
-            );
+            button.classList.remove("active");
+
+            if (button.textContent.trim() === category) {
+                button.classList.add("active");
+            }
 
         });
 
-
-    event.target.classList.add(
-        "active"
-    );
-
-
     displayMenu();
-
 }
 
 
